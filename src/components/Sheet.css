@@ -1,0 +1,98 @@
+.sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.sheet__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 13, 32, 0.55);
+  backdrop-filter: blur(2px);
+  animation: sheet-fade var(--dur-base) var(--ease);
+}
+
+.sheet__panel {
+  position: relative;
+  width: 100%;
+  max-width: var(--app-max);
+  /* dvh acompanha o teclado do celular ao abrir. */
+  max-height: 88dvh;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-sheet) var(--radius-sheet) 0 0;
+  background: var(--surface-card);
+  color: var(--text-on-light);
+  padding: 10px var(--gutter) max(var(--space-4), env(safe-area-inset-bottom));
+  box-shadow: 0 -14px 40px rgba(5, 18, 41, 0.35);
+  animation: sheet-rise var(--dur-base) var(--ease);
+  outline: none;
+}
+
+@keyframes sheet-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes sheet-rise {
+  from {
+    transform: translateY(14%);
+    opacity: 0.4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet__backdrop,
+  .sheet__panel {
+    animation: none;
+  }
+}
+
+.sheet__grabber {
+  width: 40px;
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background: #d3d9e3;
+  margin: 0 auto var(--space-3);
+  flex: 0 0 auto;
+}
+
+.sheet__head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  flex: 0 0 auto;
+}
+
+.sheet__heading {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.sheet__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.sheet__subtitle {
+  margin: 4px 0 0;
+  font-size: var(--fs-small);
+  line-height: 1.45;
+  color: var(--text-on-light-soft);
+}
+
+.sheet__close {
+  flex: 0 0 auto;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  margin: -8px -8px 0 0;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  color: var(--text-on-light-soft);
+}

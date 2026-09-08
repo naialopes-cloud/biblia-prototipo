@@ -1,0 +1,52 @@
+.appHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: max(var(--space-3), env(safe-area-inset-top)) var(--gutter)
+    var(--space-2);
+}
+
+.appHeader__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  min-width: 0;
+}
+
+.appHeader__mark {
+  flex: 0 0 auto;
+  color: var(--yellow-500);
+}
+
+.appHeader__word {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text-on-dark);
+}
+
+.appHeader__dot {
+  color: var(--yellow-500);
+}
+
+.appHeader__action {
+  flex: 0 0 auto;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  color: var(--text-on-dark);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(6px);
+  transition: background var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease);
+}
+
+.appHeader__action:active {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(0.94);
+}

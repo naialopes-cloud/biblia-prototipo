@@ -1,0 +1,49 @@
+.profileHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-2) var(--gutter) 0;
+}
+
+.profileHeader__avatarRing {
+  --avatar-size: clamp(98px, 31vw, 120px);
+  width: var(--avatar-size);
+  /* altura explícita garante o círculo, independente da foto usada */
+  height: var(--avatar-size);
+  flex: 0 0 auto;
+  border-radius: var(--radius-pill);
+  padding: 3px;
+  background: linear-gradient(
+    160deg,
+    var(--blue-300) 0%,
+    var(--blue-400) 45%,
+    var(--blue-600) 100%
+  );
+  box-shadow: 0 0 0 1px rgba(103, 178, 245, 0.3),
+    0 10px 30px rgba(14, 70, 140, 0.5);
+}
+
+.profileHeader__avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-pill);
+  object-fit: cover;
+  object-position: 50% 26%;
+  background: #d9dde4;
+}
+
+.profileHeader__name {
+  margin: var(--space-3) 0 0;
+  font-size: var(--fs-name);
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  line-height: 1.15;
+}
+
+.profileHeader__role {
+  margin: 5px 0 0;
+  font-size: var(--fs-body);
+  font-weight: 400;
+  color: var(--text-on-dark-soft);
+}

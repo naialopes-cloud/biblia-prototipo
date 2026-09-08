@@ -1,0 +1,36 @@
+.topbar {
+  display: grid;
+  grid-template-columns: var(--tap-min) 1fr var(--tap-min);
+  align-items: center;
+  gap: var(--space-2);
+  padding: max(var(--space-3), env(safe-area-inset-top)) var(--gutter)
+    var(--space-2);
+}
+
+.topbar__title {
+  margin: 0;
+  text-align: center;
+  font-size: var(--fs-title);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: var(--text-on-dark);
+}
+
+.topbar__action {
+  width: var(--tap-min);
+  height: var(--tap-min);
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  color: var(--text-on-dark);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(6px);
+  transition: background var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease);
+}
+
+.topbar__action:active {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(0.94);
+}

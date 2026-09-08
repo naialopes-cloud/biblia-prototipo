@@ -1,0 +1,10 @@
+node_modules
+dist
+
+# Pasta local do Netlify (contém o id do site)
+.netlify
+
+# Nunca versionar credenciais
+.env
+.env.*
+*.local

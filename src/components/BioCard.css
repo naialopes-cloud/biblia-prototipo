@@ -1,0 +1,125 @@
+.bioCard {
+  margin: var(--space-5) var(--gutter) 0;
+  padding: var(--space-4) var(--space-4) var(--space-4);
+  border-radius: var(--radius-xl);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 14px 34px rgba(3, 14, 36, 0.4);
+}
+
+/* Cada linha se comporta como na referência, mas quebra sozinha
+   em telas estreitas — sem rolagem horizontal e sem encolher o texto. */
+.bioCard__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.bioCard__row + .bioCard__row {
+  margin-top: var(--space-2);
+}
+
+/* Rótulo discreto de grupo — mesmo peso de "Preparo-me para:". */
+.bioCard__label {
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--text-on-dark-soft);
+}
+
+/* Separa visivelmente os grupos da bio, no mesmo eixo central
+   do avatar, do nome e das demais etiquetas. */
+.bioCard__label--group {
+  display: block;
+  text-align: center;
+  margin: var(--space-4) 0 var(--space-2);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 6px 13px;
+  border-radius: var(--radius-pill);
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  color: var(--text-on-dark);
+  font-size: var(--fs-chip);
+  line-height: 1.25;
+  max-width: 100%;
+}
+
+.chip__icon {
+  flex: 0 0 auto;
+  color: var(--blue-300);
+}
+
+.chip__label {
+  min-width: 0;
+}
+
+/* "Preparo-me para:" e a etiqueta da missão na mesma linha;
+   em telas estreitas a etiqueta desce sozinha, sem encolher o texto. */
+.bioCard__prep {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin: var(--space-4) 0 0;
+}
+
+
+
+/* ---- Botão amarelo (usado também na campanha e nos painéis) ---- */
+.btnYellow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: var(--tap-min);
+  padding: 0 20px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(
+    180deg,
+    var(--yellow-400) 0%,
+    var(--yellow-500) 55%,
+    var(--yellow-600) 100%
+  );
+  color: var(--text-on-yellow);
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: var(--shadow-yellow), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease);
+}
+
+.btnYellow:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 10px rgba(223, 182, 46, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Centralizado e com largura fixa — sem ocupar a bio inteira.
+   Mantém a altura compacta e os 44px de área de toque. */
+.btnYellow--sm {
+  display: flex;
+  width: 150px;
+  margin: var(--space-4) auto 0;
+  padding: 0 16px;
+  height: 38px;
+  min-height: 38px;
+  font-size: 14.5px;
+  position: relative;
+}
+
+.btnYellow--sm::after {
+  content: "";
+  position: absolute;
+  /* estende a área de toque para 44px sem aumentar o botão. */
+  inset: -3px -8px;
+}

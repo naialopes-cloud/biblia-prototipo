@@ -1,0 +1,12 @@
+.screen__top--detail {
+  padding-bottom: var(--space-4);
+}
+
+/* Mesmo aviso do topo azul, aqui sobre a área clara. */
+.screen__disclaimerLight {
+  margin: 0;
+  text-align: center;
+  font-size: var(--fs-micro);
+  letter-spacing: 0.3px;
+  color: var(--text-on-light-mute);
+}

@@ -1,0 +1,44 @@
+.donate {
+  padding-top: var(--space-4);
+}
+
+.donate__facts {
+  display: flex;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.donate__fact {
+  flex: 1 1 0;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: #f1f4f9;
+}
+
+.donate__fact dt {
+  font-size: var(--fs-small);
+  color: var(--text-on-light-soft);
+}
+
+.donate__fact dd {
+  margin: 4px 0 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.donate__note {
+  margin: var(--space-4) 0 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text-on-light-soft);
+}
+
+.donate__close {
+  width: 100%;
+  margin-top: var(--space-4);
+}
+
+.donate__note--lead {
+  margin-top: 0;
+  color: var(--text-on-light);
+}

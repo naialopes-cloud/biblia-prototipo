@@ -1,0 +1,162 @@
+.post {
+  border-radius: var(--radius-lg);
+  background: var(--surface-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+/* Cabeçalho do autor — só aparece onde o autor precisa ser identificado. */
+.post__head {
+  padding: 10px var(--space-4) 10px;
+}
+
+.post__authorBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: var(--tap-min);
+  padding: 2px 0;
+  text-align: left;
+  border-radius: var(--radius-md);
+}
+
+.post__authorBtn:active {
+  opacity: 0.7;
+}
+
+.post__headText {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.post__headName {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text-on-light);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.post__headSchool {
+  font-size: 12.5px;
+  color: var(--text-on-light-mute);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* A foto inteira é um alvo de toque que abre o detalhe. */
+.post__media {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border-radius: 0;
+}
+
+.post__media:active .post__image {
+  opacity: 0.92;
+}
+
+/* Fotografia inteira na largura disponível, na proporção natural.
+   O corte visto na referência é apenas o limite da tela. */
+.post picture {
+  display: block;
+}
+
+.post__image {
+  width: 100%;
+  height: auto;
+}
+
+.post__body {
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  color: var(--text-on-light);
+}
+
+.post__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-left: -10px;
+}
+
+.post__action {
+  width: var(--tap-min);
+  height: var(--tap-min);
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  color: var(--text-on-light);
+  transition: transform var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease);
+}
+
+.post__action--withCount {
+  width: auto;
+  min-width: var(--tap-min);
+  padding: 0 12px 0 9px;
+  display: inline-flex;
+  align-items: center;
+  /* pequeno respiro entre o ícone e o número */
+  gap: 6px;
+}
+
+.post__count {
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.post__action:active {
+  transform: scale(0.9);
+}
+
+.post__action.is-liked {
+  color: #e0364f;
+}
+
+.post__action.is-liked svg {
+  animation: post-like-pop var(--dur-base) var(--ease);
+}
+
+@keyframes post-like-pop {
+  0% {
+    transform: scale(0.8);
+  }
+  60% {
+    transform: scale(1.14);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* As margens abaixo são menores que os espaços pedidos porque o que se vê
+   já inclui a folga interna dos botões de 44px (9,5px abaixo do ícone) e o
+   entrelinha da caixa de texto (~2px acima da tinta). Os valores foram
+   calibrados para os espaços VISÍVEIS de 10px e 8px. */
+.post__caption {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.4;
+  color: var(--text-on-light);
+}
+
+.post__author {
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+/* Data da publicação: texto discreto, sem ser um controle. */
+.post__date {
+  display: block;
+  margin-top: 6px;
+  font-size: 12.5px;
+  letter-spacing: 0.1px;
+  color: var(--text-on-light-mute);
+}

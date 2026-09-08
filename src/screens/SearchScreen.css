@@ -1,0 +1,144 @@
+.search {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.search__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: max(var(--space-3), env(safe-area-inset-top)) var(--gutter)
+    var(--space-3);
+}
+
+.search__back {
+  flex: 0 0 auto;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  color: var(--text-on-dark);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.search__back:active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.search__field {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: var(--tap-min);
+  padding: 0 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid var(--glass-border);
+}
+
+.search__fieldIcon {
+  flex: 0 0 auto;
+  color: var(--blue-300);
+}
+
+.search__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  background: none;
+  color: var(--text-on-dark);
+  /* 16px evita o zoom automático do iOS ao focar. */
+  font-size: 16px;
+}
+
+.search__input::placeholder {
+  color: var(--text-on-dark-mute);
+}
+
+.search__input:focus {
+  outline: none;
+}
+
+/* remove o X nativo do type=search, já temos o nosso */
+.search__input::-webkit-search-decoration,
+.search__input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.search__clear {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  color: var(--text-on-dark-soft);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.search__results {
+  flex: 1 1 auto;
+  padding: var(--space-2) var(--gutter)
+    calc(var(--nav-height) + var(--space-8) + env(safe-area-inset-bottom));
+}
+
+.search__hint,
+.search__empty {
+  margin: var(--space-4) 0 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--text-on-dark-soft);
+}
+
+.search__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.search__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 64px;
+  padding: 10px 12px;
+  text-align: left;
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+}
+
+.search__item:active {
+  background: rgba(16, 65, 117, 0.55);
+}
+
+.search__itemText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.search__itemName {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-on-dark);
+}
+
+.search__itemSchool {
+  font-size: 13px;
+  color: var(--text-on-dark-soft);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

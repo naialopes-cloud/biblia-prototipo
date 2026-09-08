@@ -1,0 +1,80 @@
+.bottomNav {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--app-max);
+  bottom: 0;
+  z-index: 40;
+  padding: 0 var(--space-3)
+    calc(var(--space-2) + env(safe-area-inset-bottom));
+  pointer-events: none;
+}
+
+.bottomNav__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  border-radius: var(--radius-xl);
+  background: rgba(244, 247, 251, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: var(--shadow-nav);
+  pointer-events: auto;
+}
+
+.bottomNav__cell {
+  flex: 1 1 0;
+}
+
+.bottomNav__item {
+  width: 100%;
+  min-height: var(--tap-min);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 6px 2px;
+  border-radius: var(--radius-lg);
+  /* Itens inativos em tom neutro, menos destacado. */
+  color: var(--text-on-light-soft);
+  transition: background var(--dur-fast) var(--ease);
+}
+
+/* Item ativo em amarelo/dourado. O amarelo da marca sobre o fundo claro da
+   navegação daria 1,6:1 de contraste — ilegível —, então ele entra como no
+   resto do app: pílula na cor da marca com o conteúdo em azul-escuro, o mesmo
+   par usado nos botões "Doar". Sem brilho e sem animação. */
+.bottomNav__item.is-active {
+  color: var(--text-on-yellow);
+  background: linear-gradient(
+    180deg,
+    var(--yellow-400) 0%,
+    var(--yellow-500) 100%
+  );
+}
+
+.bottomNav__item.is-active:active {
+  background: linear-gradient(
+    180deg,
+    var(--yellow-500) 0%,
+    var(--yellow-600) 100%
+  );
+}
+
+.bottomNav__item.is-active .bottomNav__label {
+  font-weight: 700;
+}
+
+.bottomNav__item:active {
+  background: rgba(16, 65, 117, 0.09);
+}
+
+.bottomNav__label {
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}

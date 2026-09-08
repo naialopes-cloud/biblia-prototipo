@@ -1,0 +1,124 @@
+/* =========================================================================
+   Tela do perfil público — uma única rolagem vertical.
+   Cabeçalho e perfil rolam com o conteúdo; só a navegação fica fixa.
+   ========================================================================= */
+.screen {
+  min-height: 100dvh;
+  max-width: var(--app-max);
+  margin: 0 auto;
+  /* O azul continua atrás da área clara ao esticar a rolagem. */
+  background: var(--blue-950);
+}
+
+/* ---------- Área superior azul-escura com manchas de luz ---------- */
+.screen__top {
+  position: relative;
+  isolation: isolate;
+  /* mantém as manchas de luz dentro da tela, sem rolagem horizontal */
+  overflow: hidden;
+  padding-bottom: var(--space-6);
+  background:
+    radial-gradient(
+      88% 46% at 20% 5%,
+      rgba(31, 111, 205, 0.5) 0%,
+      rgba(29, 104, 194, 0) 68%
+    ),
+    radial-gradient(
+      70% 34% at 96% 26%,
+      rgba(38, 122, 210, 0.26) 0%,
+      rgba(38, 122, 210, 0) 70%
+    ),
+    radial-gradient(
+      70% 32% at 44% 30%,
+      rgba(26, 96, 180, 0.34) 0%,
+      rgba(22, 84, 160, 0) 72%
+    ),
+    radial-gradient(
+      130% 62% at 50% 100%,
+      rgba(2, 8, 20, 0.92) 0%,
+      rgba(2, 8, 20, 0) 68%
+    ),
+    linear-gradient(
+      178deg,
+      #05132c 0%,
+      #040e23 38%,
+      #030a1b 72%,
+      #020713 100%
+    );
+}
+
+/* Manchas de luz desfocadas — dão profundidade ao fundo. */
+.screen__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(52px);
+  opacity: 0.5;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.screen__glow--a {
+  top: -60px;
+  left: -70px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(
+    circle,
+    rgba(56, 143, 233, 0.75),
+    rgba(56, 143, 233, 0) 70%
+  );
+}
+
+.screen__glow--b {
+  top: 90px;
+  right: -90px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(24, 92, 175, 0.7),
+    rgba(24, 92, 175, 0) 70%
+  );
+}
+
+/* Textura suave sobre o azul. */
+.screen__grain {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.16;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+.screen__topContent {
+  position: relative;
+  z-index: 1;
+}
+
+/* Aviso de protótipo: presente, porém discreto. */
+.screen__disclaimer {
+  margin: var(--space-4) var(--gutter) 0;
+  text-align: center;
+  font-size: var(--fs-micro);
+  letter-spacing: 0.3px;
+  color: rgba(198, 216, 240, 0.55);
+}
+
+/* ---------- Área inferior clara ---------- */
+.screen__bottom {
+  position: relative;
+  border-radius: var(--radius-sheet) var(--radius-sheet) 0 0;
+  background: var(--surface-light);
+  padding: var(--space-4) 14px 0;
+  /* Espaço final: legenda e ações nunca ficam atrás da navegação. */
+  padding-bottom: calc(
+    var(--nav-height) + var(--space-8) + env(safe-area-inset-bottom)
+  );
+  display: flex;
+  flex-direction: column;
+  /* Respiro entre a campanha e as publicações, e entre publicações. */
+  gap: var(--space-5);
+  box-shadow: 0 -10px 30px rgba(3, 11, 28, 0.4);
+}

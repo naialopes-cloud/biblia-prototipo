@@ -1,0 +1,84 @@
+.comments__list {
+  list-style: none;
+  margin: var(--space-4) 0 0;
+  padding: 0 0 var(--space-2);
+  /* rola dentro do painel, mantendo o campo de texto visível
+     mesmo com o teclado do celular aberto */
+  overflow-y: auto;
+  flex: 1 1 auto;
+  min-height: 72px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.comments__item {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+}
+
+.comments__avatar {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  background: var(--blue-support);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.comments__bubble {
+  min-width: 0;
+}
+
+.comments__author {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.comments__text {
+  margin: 2px 0 0;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: #2c3852;
+  overflow-wrap: anywhere;
+}
+
+.comments__form {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 0 0 auto;
+  padding-top: var(--space-3);
+  border-top: 1px solid #e6eaf1;
+}
+
+.comments__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: var(--tap-min);
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-pill);
+  border: 1px solid #dbe1ea;
+  background: #f5f7fb;
+  color: var(--text-on-light);
+}
+
+.comments__input::placeholder {
+  color: #93a0b5;
+}
+
+.comments__submit {
+  flex: 0 0 auto;
+  padding: 0 18px;
+  font-size: 15px;
+}
+
+.comments__submit:disabled {
+  opacity: 0.5;
+  box-shadow: none;
+  cursor: default;
+}

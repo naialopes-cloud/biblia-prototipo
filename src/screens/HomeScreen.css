@@ -1,0 +1,11 @@
+/* A Home tem um topo azul curto: só cabeçalho e uma linha de contexto. */
+.screen__top--home {
+  padding-bottom: var(--space-5);
+}
+
+.home__intro {
+  margin: var(--space-2) var(--gutter) 0;
+  font-size: 14.5px;
+  line-height: 1.45;
+  color: var(--text-on-dark-soft);
+}
