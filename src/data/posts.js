@@ -4,9 +4,7 @@ import postCalebeWebp from "../assets/imagens/missao-calebe.webp";
 import postChile from "../assets/imagens/missao-chile.png";
 import postChileWebp from "../assets/imagens/missao-chile.webp";
 import postAna from "../assets/imagens/publicacao-ana-clara.png";
-import postAnaWebp from "../assets/imagens/publicacao-ana-clara.webp";
-import postMateus from "../assets/imagens/publicacao-mateus.png";
-import postMateusWebp from "../assets/imagens/publicacao-mateus.webp";
+import postMateus from "../assets/imagens/publicacao-mateus.jpeg";
 
 /**
  * DADOS DE DEMONSTRAÇÃO — publicações fictícias.
@@ -26,10 +24,7 @@ import postMateusWebp from "../assets/imagens/publicacao-mateus.webp";
  * a proporção antes do download e evitar saltos de layout.
  *
  * As fotografias ilustram lembranças de etapas anteriores e não comprovam
- * nenhuma missão real. As imagens de Ana Clara e Mateus são ILUSTRAÇÕES
- * geradas na identidade da marca (ver scripts/gerar-ilustracoes.mjs), porque
- * as fotos do projeto mostram o rosto de Lucas e atribuí-las a outra pessoa
- * falsearia a autoria.
+ * nenhuma missão real.
  */
 export const posts = [
   {
@@ -55,11 +50,11 @@ export const posts = [
     studentId: "mateus-rocha",
     title: "Missão Litoral",
     image: postMateus,
-    imageWebp: postMateusWebp,
-    width: 1440,
-    height: 1080,
-    imageAlt: "Ilustração de um globo sobre um horizonte azul da Missão Litoral",
-    caption: "Servindo juntos e compartilhando o amor de Deus.",
+    width: 945,
+    height: 1178,
+    imageAlt:
+      "Grupo sentado na grama em roda diante de barracas, com lenços amarelos, durante um acampamento missionário",
+    caption: "Cada encontro renova nossa esperança. 🙏",
     date: "2026-08-24",
     likes: 27,
     comments: [
@@ -90,12 +85,11 @@ export const posts = [
     studentId: "ana-clara-mendes",
     title: "Missão Sertão",
     image: postAna,
-    imageWebp: postAnaWebp,
-    width: 1440,
-    height: 1080,
+    width: 1024,
+    height: 1536,
     imageAlt:
-      "Ilustração de mãos abertas segurando um coração sobre um horizonte dourado da Missão Sertão",
-    caption: "Cada encontro renova nossa esperança. 🙏",
+      "Ana Clara Mendes, de uniforme com lenço amarelo, em uma selfie diante de uma cruz de madeira enfeitada com lenços, ao pôr do sol no sertão",
+    caption: "Servindo juntos e compartilhando o amor de Deus.",
     date: "2026-08-05",
     likes: 35,
     comments: [

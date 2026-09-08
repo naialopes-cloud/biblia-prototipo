@@ -1,4 +1,5 @@
 import avatarLucas from "../assets/imagens/avatar-lucas-oliveira.png";
+import avatarAnaClara from "../assets/imagens/avatar-ana-clara-mendes.png";
 
 /** Escola única desta versão do protótipo — evita duplicar o nome por engano. */
 export const SCHOOL = "Escola Missionária Esperança";
@@ -28,7 +29,9 @@ export const students = [
     id: "ana-clara-mendes",
     name: "Ana Clara Mendes",
     role: "Aluna missionária",
-    avatar: null,
+    avatar: avatarAnaClara,
+    avatarAlt:
+      "Retrato de Ana Clara Mendes, jovem de cabelos longos castanhos, sorrindo ao entardecer",
     school: SCHOOL,
     location: "Joinville, SC",
     missions: ["Missão Sertão", "Missão Calebe"],
