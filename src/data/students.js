@@ -1,5 +1,6 @@
 import avatarLucas from "../assets/imagens/avatar-lucas-oliveira.png";
 import avatarAnaClara from "../assets/imagens/avatar-ana-clara-mendes.png";
+import avatarMateus from "../assets/imagens/avatar-mateus-rocha.jpg";
 
 /** Escola única desta versão do protótipo — evita duplicar o nome por engano. */
 export const SCHOOL = "Escola Missionária Esperança";
@@ -41,7 +42,9 @@ export const students = [
     id: "mateus-rocha",
     name: "Mateus Rocha",
     role: "Aluno missionário",
-    avatar: null,
+    avatar: avatarMateus,
+    avatarAlt:
+      "Retrato de Mateus Rocha, jovem de cabelos castanhos, sorrindo com uma mochila no ombro",
     school: SCHOOL,
     location: "Blumenau, SC",
     missions: ["Missão Calebe", "Missão Litoral"],
