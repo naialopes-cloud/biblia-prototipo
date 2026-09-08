@@ -59,3 +59,11 @@
   background: rgba(255, 255, 255, 0.2);
   transform: scale(0.94);
 }
+
+/* Correção óptica exclusiva da lupa: o cabo diagonal desloca a leitura do
+   símbolo para a direita dentro do círculo. O desenho não muda — só o SVG
+   inteiro anda para a esquerda. Não afeta nenhum outro ícone. */
+.appHeader__action svg {
+  display: block;
+  transform: translateX(-1px);
+}
