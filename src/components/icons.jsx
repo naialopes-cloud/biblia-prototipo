@@ -93,10 +93,14 @@ export const CommentIcon = (p) => (
   </svg>
 );
 
+/* O cabo diagonal concentra massa embaixo à direita e puxa a leitura do
+   ícone para esse canto. A lente é posicionada acima e à esquerda do centro
+   para que o CENTROIDE do traço (lente + cabo) caia em (12,12), que é o que
+   o olho enxerga como centro. */
 export const SearchIcon = (p) => (
   <svg {...base} {...p}>
-    <circle cx="10.8" cy="10.8" r="6.6" />
-    <path d="m15.6 15.6 4.2 4.2" />
+    <circle cx="11.3" cy="11.3" r="6.9" />
+    <path d="m16.3 16.3 3.5 3.5" />
   </svg>
 );
 

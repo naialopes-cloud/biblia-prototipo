@@ -1,10 +1,10 @@
-/* A Home tem um topo azul curto: só cabeçalho e uma linha de contexto. */
+/* Topo azul curto: só a marca, a busca e a frase de contexto. */
 .screen__top--home {
-  padding-bottom: var(--space-5);
+  padding-bottom: var(--space-4);
 }
 
 .home__intro {
-  margin: var(--space-2) var(--gutter) 0;
+  margin: var(--space-3) var(--gutter) 0;
   font-size: 14.5px;
   line-height: 1.45;
   color: var(--text-on-dark-soft);

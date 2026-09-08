@@ -20,7 +20,7 @@
   --yellow-600: #c99c19; /* base do gradiente do botão */
 
   /* ---- Área clara ---- */
-  --surface-light: #e9edf4;
+  --surface-light: #f2f4f7;
   --surface-card: #ffffff;
 
   /* ---- Texto ---- */
@@ -29,7 +29,7 @@
   --text-on-dark-mute: rgba(214, 228, 245, 0.68);
   --text-on-light: #101a2c;
   --text-on-light-soft: #5a6880;
-  --text-on-light-mute: #64748b; /* data das publicações */
+  --text-on-light-mute: #5f6f84; /* data e escola nas publicações */
   --text-on-yellow: #0b2a52;
 
   /* ---- Vidro / translucidez ---- */
@@ -77,13 +77,21 @@
   --tap-min: 44px;
 
   /* ---- Navegação inferior ---- */
+  /* O azul da marca marca o item ativo; o amarelo fica reservado aos
+     botões de doação e a pequenos detalhes. */
+  --nav-active: var(--blue-support);
+  --nav-inactive: #5f6f84;
+  --nav-bg: rgba(255, 255, 255, 0.94);
+  --nav-radius: 20px;
+  --nav-indicator-w: 20px;
+  --nav-indicator-h: 3px;
   --nav-height: 62px;
   --nav-gap: 10px;
 
   /* ---- Sombras ---- */
   --shadow-yellow: 0 6px 18px rgba(223, 182, 46, 0.32);
-  --shadow-card: 0 10px 30px rgba(8, 24, 51, 0.14);
-  --shadow-nav: 0 8px 30px rgba(10, 26, 54, 0.22);
+  --shadow-card: 0 7px 20px rgba(8, 24, 51, 0.09);
+  --shadow-nav: 0 4px 16px rgba(10, 26, 54, 0.1);
 
   /* ---- Movimento ---- */
   --ease: cubic-bezier(0.32, 0.72, 0.29, 1);

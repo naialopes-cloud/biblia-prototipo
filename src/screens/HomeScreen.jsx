@@ -30,9 +30,6 @@ export default function HomeScreen({
         <div className="screen__topContent">
           <AppHeader onSearch={onSearch} />
           <p className="home__intro">Caminhadas dos estudantes missionários</p>
-          <p className="screen__disclaimer">
-            Protótipo • Dados e interações fictícios
-          </p>
         </div>
       </div>
 

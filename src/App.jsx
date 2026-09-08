@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import HomeScreen from "./screens/HomeScreen.jsx";
 import ProfileScreen from "./screens/ProfileScreen.jsx";
 import SearchScreen from "./screens/SearchScreen.jsx";
@@ -14,8 +14,20 @@ import { usePostInteractions } from "./hooks/usePostInteractions.js";
 import { useRoute } from "./hooks/useRoute.js";
 import "./App.css";
 
+/** Título do navegador por rota — muda também ao usar o botão voltar. */
+const TITULOS = {
+  home: "Início",
+  search: "Buscar estudantes",
+  profile: "Perfil",
+  post: "Publicação",
+};
+
 export default function App() {
   const { route, navigate, back, goHome } = useRoute();
+
+  useEffect(() => {
+    document.title = `Bibl.ia — ${TITULOS[route.name] ?? "Início"}`;
+  }, [route]);
 
   // Um único estado de curtidas/comentários para TODAS as publicações, para
   // que Home, perfil e detalhe mostrem sempre o mesmo número.
