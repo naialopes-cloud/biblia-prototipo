@@ -1,6 +1,6 @@
 /* Topo azul curto: só a marca, a busca e a frase de contexto. */
 .screen__top--home {
-  padding-bottom: var(--space-4);
+  padding-bottom: calc(var(--space-4) + var(--surface-overlap));
 }
 
 .home__intro {

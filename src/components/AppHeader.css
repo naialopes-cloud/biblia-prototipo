@@ -10,13 +10,13 @@
 .appHeader__brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   margin: 0;
   min-width: 0;
 }
 
-/* Envoltório exclusivo da marca: o degradê vive no ::before, atrás da
-   imagem, e fica restrito a esta região — não ilumina o texto ao lado. */
+/* Envoltório da marca: só a imagem transparente sobre o azul, sem brilho,
+   halo ou sombra. */
 .appHeader__markWrap {
   position: relative;
   flex: 0 0 auto;
@@ -26,40 +26,20 @@
   line-height: 0;
 }
 
-/* Degradê amarelo recriado em CSS, com os dourados presentes na própria
-   marca (#ffd040 no centro, #e0a010 no meio) e o amarelo da identidade
-   (#dfb62e) esmaecendo até transparente. Sem círculo sólido, sem borda,
-   sem sombra e sem neon. */
-.appHeader__markWrap::before {
-  content: "";
-  position: absolute;
-  inset: -20%;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 50% 48%,
-    rgba(255, 208, 64, 0.5) 0%,
-    rgba(242, 207, 82, 0.34) 30%,
-    rgba(224, 160, 16, 0.16) 55%,
-    rgba(223, 182, 46, 0.05) 72%,
-    rgba(223, 182, 46, 0) 84%
-  );
-  filter: blur(2px);
-  pointer-events: none;
-}
-
 .appHeader__mark {
-  position: relative;
-  z-index: 1;
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
+/* Fraunces só aqui, no nome da marca. Nenhum outro texto do app usa. */
 .appHeader__word {
-  font-size: 21px;
-  font-weight: 700;
-  letter-spacing: -0.3px;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.4px;
   color: var(--text-on-dark);
 }
 

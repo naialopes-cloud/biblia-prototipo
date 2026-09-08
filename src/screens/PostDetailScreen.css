@@ -1,5 +1,5 @@
 .screen__top--detail {
-  padding-bottom: var(--space-4);
+  padding-bottom: calc(var(--space-4) + var(--surface-overlap));
 }
 
 /* Mesmo aviso do topo azul, aqui sobre a área clara. */

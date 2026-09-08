@@ -16,7 +16,10 @@
   isolation: isolate;
   /* mantém as manchas de luz dentro da tela, sem rolagem horizontal */
   overflow: hidden;
-  padding-bottom: var(--space-6);
+  /* Os 40px extras continuam o mesmo gradiente por baixo da área clara,
+     preenchendo o que apareceria de escuro atrás dos cantos arredondados.
+     A área clara sobe os mesmos 40px, então nada se move na tela. */
+  padding-bottom: calc(var(--space-6) + var(--surface-overlap));
   background:
     radial-gradient(
       88% 46% at 20% 5%,
@@ -110,6 +113,8 @@
 /* ---------- Área inferior clara ---------- */
 .screen__bottom {
   position: relative;
+  z-index: 1;
+  margin-top: calc(var(--surface-overlap) * -1);
   border-radius: var(--radius-sheet) var(--radius-sheet) 0 0;
   background: var(--surface-light);
   padding: var(--space-4) 14px 0;
