@@ -93,16 +93,13 @@ export const CommentIcon = (p) => (
   </svg>
 );
 
-/* Centrado pelo que se vê, não pelo cálculo: a caixa do traço já estava em
-   (12,12), mas o cabo comprido puxava a leitura para baixo à direita e a
-   lente ficava alta demais. O cabo foi encurtado e a lente aproximada do
-   centro, de modo que ela — que é o que o olho lê como "a lupa" — fique
-   sobre o eixo do círculo. Conferido por sobreposição do eixo no botão
-   renderizado, não só por medida. */
+/* Lupa padrão: lente centrada em (11,11) e cabo curto até a borda do
+   viewBox. Geometria estável — o alinhamento é resolvido pela caixa do
+   SVG no CSS, não deslocando o desenho. */
 export const SearchIcon = (p) => (
   <svg {...base} {...p}>
-    <circle cx="11.65" cy="11.65" r="6.5" />
-    <path d="m16.25 16.25 2.6 2.6" />
+    <circle cx="11" cy="11" r="8" />
+    <path d="m21 21-4.35-4.35" />
   </svg>
 );
 

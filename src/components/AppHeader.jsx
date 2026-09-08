@@ -18,7 +18,7 @@ export default function AppHeader({ onSearch }) {
         onClick={onSearch}
         aria-label="Buscar estudantes"
       >
-        <SearchIcon width="20" height="20" />
+        <SearchIcon className="appHeader__searchIcon" />
       </button>
     </header>
   );

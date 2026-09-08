@@ -37,9 +37,12 @@
   /* círculo visível menor que o alvo de toque (ver ::after) */
   width: 40px;
   height: 40px;
+  padding: 0;
   display: grid;
   place-items: center;
-  border-radius: var(--radius-pill);
+  /* zera a métrica de linha: nada de espaço de descendente sob o SVG */
+  line-height: 0;
+  border-radius: 50%;
   color: var(--text-on-dark);
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -60,10 +63,13 @@
   transform: scale(0.94);
 }
 
-/* Correção óptica exclusiva da lupa: o cabo diagonal desloca a leitura do
-   símbolo para a direita dentro do círculo. O desenho não muda — só o SVG
-   inteiro anda para a esquerda. Não afeta nenhum outro ícone. */
-.appHeader__action svg {
+/* Caixa exclusiva da lupa: previsível e sem nenhum deslocamento. O ícone
+   fica centrado pela grade do botão. Não atinge nenhum outro SVG. */
+.appHeader__searchIcon {
+  width: 20px;
+  height: 20px;
   display: block;
-  transform: translateX(-1px);
+  flex: none;
+  margin: 0;
+  transform: none;
 }
