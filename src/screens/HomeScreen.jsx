@@ -15,7 +15,6 @@ export default function HomeScreen({
   onSearch,
   onOpenProfile,
   onOpenComments,
-  onOpenPost,
 }) {
   const posts = getFeedPosts();
   const { byPost, toggleLike } = interactions;
@@ -50,7 +49,6 @@ export default function HomeScreen({
               onToggleLike={() => toggleLike(post.id)}
               onOpenComments={() => onOpenComments(post.id)}
               onOpenAuthor={() => onOpenProfile(author.id)}
-              onOpenPhoto={() => onOpenPost(post.id)}
             />
           );
         })}

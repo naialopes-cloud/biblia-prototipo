@@ -49,18 +49,6 @@
   white-space: nowrap;
 }
 
-/* A foto inteira é um alvo de toque que abre o detalhe. */
-.post__media {
-  display: block;
-  width: 100%;
-  padding: 0;
-  border-radius: 0;
-}
-
-.post__media:active .post__image {
-  opacity: 0.92;
-}
-
 /* Fotografia inteira na largura disponível, na proporção natural.
    O corte visto na referência é apenas o limite da tela. */
 .post picture {

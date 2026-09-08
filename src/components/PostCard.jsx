@@ -23,7 +23,6 @@ export default function PostCard({
   onToggleLike,
   onOpenComments,
   onOpenAuthor,
-  onOpenPhoto,
 }) {
   // width/height reservam a proporção antes do download e evitam saltos.
   const media = (
@@ -68,18 +67,9 @@ export default function PostCard({
         </div>
       )}
 
-      {onOpenPhoto ? (
-        <button
-          type="button"
-          className="post__media"
-          onClick={onOpenPhoto}
-          aria-label={`Abrir a publicação ${post.title} de ${authorName}`}
-        >
-          {figura}
-        </button>
-      ) : (
-        figura
-      )}
+      {/* A fotografia é apenas imagem: não abre nada, não recebe foco
+          e não é anunciada como botão. */}
+      {figura}
 
       <div className="post__body">
         <div className="post__actions">

@@ -20,7 +20,6 @@ export default function ProfileScreen({
   onShare,
   onDonate,
   onOpenComments,
-  onOpenPost,
 }) {
   const student = getStudent(studentId);
   const campaign = getCampaignByStudent(studentId);
@@ -64,7 +63,6 @@ export default function ProfileScreen({
               eager={index === 0}
               onToggleLike={() => toggleLike(post.id)}
               onOpenComments={() => onOpenComments(post.id)}
-              onOpenPhoto={() => onOpenPost(post.id)}
             />
           );
         })}

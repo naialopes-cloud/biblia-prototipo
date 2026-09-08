@@ -51,6 +51,9 @@ export default function App() {
     route.name === "profile" ? getCampaignByStudent(route.id) : null;
 
   const openProfile = (studentId) => navigate({ name: "profile", id: studentId });
+  // A rota de detalhe da publicação segue implementada (PostDetailScreen),
+  // mas hoje nada navega até ela: a fotografia é apenas imagem.
+  // eslint-disable-next-line no-unused-vars
   const openPost = (postId) => navigate({ name: "post", id: postId });
 
   const handleShare = async () => {
@@ -97,7 +100,6 @@ export default function App() {
           onSearch={() => navigate({ name: "search" })}
           onOpenProfile={openProfile}
           onOpenComments={setOpenCommentsFor}
-          onOpenPost={openPost}
         />
       )}
 
@@ -114,7 +116,6 @@ export default function App() {
           onShare={handleShare}
           onDonate={() => setDonateOpen(true)}
           onOpenComments={setOpenCommentsFor}
-          onOpenPost={openPost}
         />
       )}
 
