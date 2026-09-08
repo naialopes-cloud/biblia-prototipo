@@ -8,3 +8,7 @@ dist
 .env
 .env.*
 *.local
+
+# Páginas salvas do navegador soltas na pasta do projeto
+foto-perfil-*
+*_files/
