@@ -1,21 +1,25 @@
 import { SearchIcon } from "./icons.jsx";
 import marcaBiblia from "../assets/imagens/marca-biblia.png";
+import marcaEscrita from "../assets/imagens/marca-biblia-escrita.png";
 import "./AppHeader.css";
 
 /** Cabeçalho compacto da Home: marca à esquerda, busca à direita. */
 export default function AppHeader({ onSearch }) {
   return (
     <header className="appHeader">
-      <p className="appHeader__brand">
-        {/* Decorativa: o texto ao lado já identifica a marca. */}
+      {/* Grupo da marca: livro + logotipo. As duas imagens são decorativas;
+          o nome acessível fica no grupo, sem texto visível duplicado. */}
+      <div className="appHeader__brand" role="img" aria-label="Bibl.ia">
         <span className="appHeader__markWrap">
           <img className="appHeader__mark" src={marcaBiblia} alt="" aria-hidden="true" />
         </span>
-        <span className="appHeader__word">
-          <span className="appHeader__wordStrong">Bibl</span>
-          <span className="appHeader__dot">.</span>ia
-        </span>
-      </p>
+        <img
+          className="appHeader__wordmark"
+          src={marcaEscrita}
+          alt=""
+          aria-hidden="true"
+        />
+      </div>
 
       <button
         type="button"

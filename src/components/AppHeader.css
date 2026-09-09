@@ -11,8 +11,16 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin: 0;
   min-width: 0;
+}
+
+/* Logotipo escrito: só a altura é fixada, a largura acompanha a proporção
+   original do arquivo. */
+.appHeader__wordmark {
+  display: block;
+  height: 25px;
+  width: auto;
+  object-fit: contain;
 }
 
 /* Envoltório da marca: só a imagem transparente sobre o azul, sem brilho,
@@ -20,8 +28,8 @@
 .appHeader__markWrap {
   position: relative;
   flex: 0 0 auto;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   display: block;
   line-height: 0;
 }
@@ -31,26 +39,6 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-
-/* Sora só aqui, no nome da marca. Nenhum outro texto do app usa. */
-.appHeader__word {
-  font-family: "Sora", sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.5px;
-  color: var(--text-on-dark);
-  white-space: nowrap;
-}
-
-.appHeader__wordStrong {
-  font-weight: 700;
-}
-
-.appHeader__dot {
-  font-weight: 700;
-  color: var(--yellow-500);
 }
 
 .appHeader__action {
