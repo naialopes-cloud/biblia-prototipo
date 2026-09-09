@@ -13,6 +13,9 @@ export default function HomeScreen({
   interactions,
   commentsOf,
   onSearch,
+  onOpenMenu,
+  menuOpen,
+  menuId,
   onOpenProfile,
   onOpenComments,
 }) {
@@ -27,7 +30,12 @@ export default function HomeScreen({
         <div className="screen__grain" aria-hidden="true" />
 
         <div className="screen__topContent">
-          <AppHeader onSearch={onSearch} />
+          <AppHeader
+            onSearch={onSearch}
+            onOpenMenu={onOpenMenu}
+            menuOpen={menuOpen}
+            menuId={menuId}
+          />
           <p className="home__intro">Caminhadas dos estudantes missionários</p>
         </div>
       </div>

@@ -7,6 +7,7 @@ import BottomNav from "./components/BottomNav.jsx";
 import DonateSheet from "./components/DonateSheet.jsx";
 import CommentsSheet from "./components/CommentsSheet.jsx";
 import Toast from "./components/Toast.jsx";
+import CampaignsDrawer from "./components/CampaignsDrawer.jsx";
 import { getStudent } from "./data/students.js";
 import { getCampaignByStudent } from "./data/campaigns.js";
 import { posts, getPost } from "./data/posts.js";
@@ -35,6 +36,8 @@ export default function App() {
   const { byPost, addComment } = interactions;
 
   const [donateOpen, setDonateOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const MENU_ID = "painel-missoes";
   const [openCommentsFor, setOpenCommentsFor] = useState(null);
   const [toast, setToast] = useState("");
 
@@ -51,6 +54,29 @@ export default function App() {
     route.name === "profile" ? getCampaignByStudent(route.id) : null;
 
   const openProfile = (studentId) => navigate({ name: "profile", id: studentId });
+
+  /** Devolve o foco ao botão do menu ao fechar o painel. */
+  const closeMenu = () => {
+    setMenuOpen(false);
+    requestAnimationFrame(() =>
+      document.querySelector(".appHeader__icon--menu")?.focus()
+    );
+  };
+
+  /** Do painel para o perfil, já posicionado na campanha. */
+  const openStudentFromMenu = (studentId) => {
+    setMenuOpen(false);
+    openProfile(studentId);
+    const suave = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() =>
+        document.querySelector(".campaign")?.scrollIntoView({
+          block: "center",
+          behavior: suave ? "smooth" : "instant",
+        })
+      )
+    );
+  };
   // A rota de detalhe da publicação segue implementada (PostDetailScreen),
   // mas hoje nada navega até ela: a fotografia é apenas imagem.
   // eslint-disable-next-line no-unused-vars
@@ -98,6 +124,9 @@ export default function App() {
           interactions={interactions}
           commentsOf={commentsOf}
           onSearch={() => navigate({ name: "search" })}
+          onOpenMenu={() => setMenuOpen(true)}
+          menuOpen={menuOpen}
+          menuId={MENU_ID}
           onOpenProfile={openProfile}
           onOpenComments={setOpenCommentsFor}
         />
@@ -134,6 +163,13 @@ export default function App() {
       <BottomNav
         active={route.name === "home" ? "inicio" : null}
         onSelect={handleNav}
+      />
+
+      <CampaignsDrawer
+        id={MENU_ID}
+        open={menuOpen}
+        onClose={closeMenu}
+        onOpenStudent={openStudentFromMenu}
       />
 
       <DonateSheet

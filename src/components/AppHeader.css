@@ -1,15 +1,16 @@
+/* Três colunas iguais nas laterais: a logo fica no centro exato da tela. */
 .appHeader {
-  display: flex;
+  display: grid;
+  grid-template-columns: var(--tap-min) 1fr var(--tap-min);
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-3);
+  gap: var(--space-2);
   padding: max(var(--space-3), env(safe-area-inset-top)) var(--gutter)
     var(--space-2);
 }
 
 .appHeader__brand {
   display: flex;
-  align-items: center;
+  justify-content: center;
   min-width: 0;
 }
 
@@ -23,45 +24,45 @@
   flex: 0 0 auto;
 }
 
-.appHeader__action {
-  position: relative;
-  flex: 0 0 auto;
-  /* círculo visível menor que o alvo de toque (ver ::after) */
-  width: 40px;
-  height: 40px;
-  padding: 0;
+/* Menu e busca: só o traço branco, sem círculo, borda, fundo ou vidro.
+   O alvo de toque continua 44x44. Classe própria — não afeta os botões
+   de voltar, compartilhar ou fechar, que seguem com o círculo. */
+.appHeader__icon {
+  width: var(--tap-min);
+  height: var(--tap-min);
   display: grid;
   place-items: center;
-  /* zera a métrica de linha: nada de espaço de descendente sob o SVG */
-  line-height: 0;
-  border-radius: 50%;
+  padding: 0;
+  border: 0;
+  background: none;
+  border-radius: var(--radius-pill);
   color: var(--text-on-dark);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(6px);
-  transition: background var(--dur-fast) var(--ease),
+  transition: opacity var(--dur-fast) var(--ease),
     transform var(--dur-fast) var(--ease);
 }
 
-/* estende a área de toque para 44x44 sem aumentar o círculo */
-.appHeader__action::after {
-  content: "";
-  position: absolute;
-  inset: -2px;
+.appHeader__icon--menu {
+  justify-self: start;
 }
 
-.appHeader__action:active {
-  background: rgba(255, 255, 255, 0.2);
+.appHeader__icon--search {
+  justify-self: end;
+}
+
+.appHeader__icon:active {
+  opacity: 0.7;
   transform: scale(0.94);
 }
 
-/* Caixa exclusiva da lupa: previsível e sem nenhum deslocamento. O ícone
-   fica centrado pela grade do botão. Não atinge nenhum outro SVG. */
-.appHeader__searchIcon {
-  width: 20px;
-  height: 20px;
+/* O círculo não volta em nenhum estado; o foco por teclado usa o outline
+   global de :focus-visible. */
+.appHeader__icon:hover,
+.appHeader__icon:focus {
+  background: none;
+}
+
+.appHeader__glyph {
   display: block;
-  flex: none;
-  margin: 0;
-  transform: none;
+  width: 22px;
+  height: 22px;
 }

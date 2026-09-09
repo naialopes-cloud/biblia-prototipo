@@ -96,6 +96,14 @@ export const CommentIcon = (p) => (
 /* Lupa padrão: lente centrada em (11,11) e cabo curto até a borda do
    viewBox. Geometria estável — o alinhamento é resolvido pela caixa do
    SVG no CSS, não deslocando o desenho. */
+export const MenuIcon = (p) => (
+  <svg {...base} {...p}>
+    <path d="M4 7h16" />
+    <path d="M4 12h16" />
+    <path d="M4 17h16" />
+  </svg>
+);
+
 export const SearchIcon = (p) => (
   <svg {...base} {...p}>
     <circle cx="11" cy="11" r="8" />
