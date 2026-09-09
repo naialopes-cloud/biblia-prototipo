@@ -33,17 +33,23 @@
   object-fit: contain;
 }
 
-/* Fraunces só aqui, no nome da marca. Nenhum outro texto do app usa. */
+/* Sora só aqui, no nome da marca. Nenhum outro texto do app usa. */
 .appHeader__word {
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 25px;
+  font-family: "Sora", sans-serif;
+  font-size: 24px;
   font-weight: 600;
   line-height: 1;
-  letter-spacing: -0.4px;
+  letter-spacing: -0.5px;
   color: var(--text-on-dark);
+  white-space: nowrap;
+}
+
+.appHeader__wordStrong {
+  font-weight: 700;
 }
 
 .appHeader__dot {
+  font-weight: 700;
   color: var(--yellow-500);
 }
 

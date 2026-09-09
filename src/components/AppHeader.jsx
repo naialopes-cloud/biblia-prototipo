@@ -12,7 +12,8 @@ export default function AppHeader({ onSearch }) {
           <img className="appHeader__mark" src={marcaBiblia} alt="" aria-hidden="true" />
         </span>
         <span className="appHeader__word">
-          Bibl<span className="appHeader__dot">.</span>ia
+          <span className="appHeader__wordStrong">Bibl</span>
+          <span className="appHeader__dot">.</span>ia
         </span>
       </p>
 
