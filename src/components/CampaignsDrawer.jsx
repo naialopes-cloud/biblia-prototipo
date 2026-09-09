@@ -103,18 +103,22 @@ export default function CampaignsDrawer({ id, open, onClose, onOpenStudent }) {
           </button>
         </div>
 
-        <div className="drawer__sort" role="group" aria-label="Ordenar missões">
-          {ORDENACOES.map(({ id: valor, rotulo }) => (
-            <button
-              key={valor}
-              type="button"
-              className={`drawer__sortBtn${ordem === valor ? " is-active" : ""}`}
-              onClick={() => setOrdem(valor)}
-              aria-pressed={ordem === valor}
-            >
-              {rotulo}
-            </button>
-          ))}
+        <div className="drawer__sortWrap">
+          <div className="drawer__sort" role="group" aria-label="Ordenar missões">
+            {ORDENACOES.map(({ id: valor, rotulo }) => (
+              <button
+                key={valor}
+                type="button"
+                className={`drawer__sortBtn${
+                  ordem === valor ? " is-active" : ""
+                }`}
+                onClick={() => setOrdem(valor)}
+                aria-pressed={ordem === valor}
+              >
+                {rotulo}
+              </button>
+            ))}
+          </div>
         </div>
 
         <ul className="drawer__list">
@@ -124,6 +128,7 @@ export default function CampaignsDrawer({ id, open, onClose, onOpenStudent }) {
                 type="button"
                 className="drawer__card"
                 onClick={() => onOpenStudent(aluno.id)}
+                aria-label={`Abrir o perfil de ${aluno.name}`}
               >
                 <span className="drawer__cardHead">
                   <Avatar student={aluno} size={40} />
@@ -153,7 +158,7 @@ export default function CampaignsDrawer({ id, open, onClose, onOpenStudent }) {
                     {formatBRL(campanha.raisedCents)} /{" "}
                     {formatBRL(campanha.goalCents)}
                   </span>
-                  <span className="drawer__acao">Ver missão</span>
+                  <span className="drawer__acao">Ver perfil</span>
                 </span>
               </button>
             </li>
