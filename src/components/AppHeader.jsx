@@ -1,5 +1,4 @@
 import { SearchIcon } from "./icons.jsx";
-import marcaBiblia from "../assets/imagens/marca-biblia.png";
 import marcaEscrita from "../assets/imagens/marca-biblia-escrita.png";
 import "./AppHeader.css";
 
@@ -7,12 +6,10 @@ import "./AppHeader.css";
 export default function AppHeader({ onSearch }) {
   return (
     <header className="appHeader">
-      {/* Grupo da marca: livro + logotipo. As duas imagens são decorativas;
-          o nome acessível fica no grupo, sem texto visível duplicado. */}
+      {/* O logotipo escrito identifica a marca sozinho. O nome acessível
+          fica no grupo; a imagem entra decorativa para não duplicar.
+          A imagem do livro segue em assets para outros usos. */}
       <div className="appHeader__brand" role="img" aria-label="Bibl.ia">
-        <span className="appHeader__markWrap">
-          <img className="appHeader__mark" src={marcaBiblia} alt="" aria-hidden="true" />
-        </span>
         <img
           className="appHeader__wordmark"
           src={marcaEscrita}
